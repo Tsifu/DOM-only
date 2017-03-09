@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./jquery_lite.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Dom-Only</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="header-content">
+        <div class="title">
+          DOM-Only
+        </div>
+        <div class="description">
+          A light-weight DOM manipulation library to demonstrate event handling, traversal, and AJAX request with the native DOM API and vanilla JavaScript
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-content">
+
+        <div class="manipulation">
+          <div class="man-button">
+            <button class="change-attr">change attr</button>
+          </div>
+
+          <div class="img-div">
+            <img class="moon" src="./assets/img/full_moon.jpg"/>
+          </div>
+        </div>
+
+        <div class="traversal">
+          <div class="li-buttons">
+              <div>
+                <button class="add-li">append</button>
+              </div>
+
+              <div>
+                <button class="change-li">change innerHTML</button>
+              </div>
+
+              <div>
+                <button class="clear-li">clear innerHTML</button>
+              </div>
+
+              <div>
+                <button class="remove-li">remove children</button>
+              </div>
+          </div>
+
+          <div >
+            <ul class="test-ul">
+            </ul>
+          </div>
+        </div>
+
+        <div class="ajax">
+          <div class="ajax-button">
+            <button class="xhr-request">Ajax</button>
+          </div>
+          <div class="giphy"></div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <div class="sc-title">
+        Source Code
+      </div>
+
+      <div class="source-code">
+          <img class="sc-detail"/>
+      </div>
+    </div>
+    </main>
+
+    <header>
+        <div class="header">
+          <a href="mailto:tsi.lung@gmail.com" className="icon fa-envelope"><span>Email</span></a>
+          <a href="https://www.linkedin.com/in/tsi-yang-lung-43528313/" className="icon fa-linkedin"><span>LinkedIn</span></a>
+          <a href="https://github.com/Tsifu" className="icon fa-github"><span>Github</span></a>
+        </div>
+    </header>
+
+    <script type="text/javascript">
+      $l(".add-li").on("click", () => {
+        color = $l.getRandomColor();
+        $l(".test-ul").append(`<li style="background-color: ${color}">${color}</li>`);
+        $l(".sc-detail").attr("src", "./assets/detail/append.png");
+      })
+
+      $l(".change-li").on("click", () => {
+        $l("li").html("Boom!")
+        $l(".sc-detail").attr("src", "./assets/detail/html.png");
+      })
+
+      $l(".clear-li").on("click", () => {
+        $l("li").empty();
+        $l(".sc-detail").attr("src", "./assets/detail/empty.png");
+      })
+
+      $l(".change-attr").on("click", () => {
+        if ($l(".img-div").find(".moon").htmlElements.length === 1) {
+          $l(".moon").attr("src", "./assets/img/half_moon.jpeg")
+          $l(".img-div").children().removeClass('moon')
+        } else {
+          $l(".img-div").children().attr("src", "./assets/img/full_moon.jpg")
+          $l(".img-div").children().addClass('moon')
+        }
+        $l(".sc-detail").attr("src", "./assets/detail/change_button.png");
+      })
+
+      $l(".remove-li").on("click", () => {
+        $l("ul").children().remove()
+        $l(".sc-detail").attr("src", "./assets/detail/remove.png");
+      })
+
+      $l(".xhr-request").on("click", () => {
+        $l.ajax({
+          url: "http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&limit=1&ids=UkhHIZ37IDRGo",
+          success(data){
+            const imageUrl = data['data'][0]['images']['fixed_width']['url']
+            $l('.giphy').html(`<img src=${imageUrl}>`)
+          }
+        })
+
+        $l(".sc-detail").attr("src", "./assets/detail/change_button.png");
+      })
+    </script>
+  </body>
+</html>
