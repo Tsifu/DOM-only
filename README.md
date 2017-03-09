@@ -10,7 +10,8 @@ This project showcases how to implement: AJAX requests, event handling, DOM trav
 
 ## DEMO
 
-Download the original files, all the source code for the library is in both `lib/dom_node_collection.js` and `lib/main.js`. Use `webpack` to compile the files and use the function in your own project!
+Feel free to download the original files, all the source code for the library is in both `lib/dom_node_collection.js` and `lib/main.js`.  Use webpack to compile the files and  
+add the follow script tag ```<script type="text/javascript" src="./jquery_lite.js" charset="utf-8"></script>``` and you are ready to go. 
 
 ## Core Functions
 
