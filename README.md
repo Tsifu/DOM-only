@@ -10,7 +10,7 @@ This project showcases how to implement: AJAX requests, event handling, DOM trav
 
 ## DEMO
 
-Download the original files `lib/dom_node_collection.js` and `lib/main.js` and use `webpack` to compile the files.
+Download the original files, all the source code for the library is in both `lib/dom_node_collection.js` and `lib/main.js`. Use `webpack` to compile the files and use the function in your own project!
 
 ## Core Functions
 
