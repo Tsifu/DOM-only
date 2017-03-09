@@ -2,9 +2,19 @@
 
 ##Overview
 
+[Live site](http://tsi.life/DOM-only/)
+
+![main screen](assets/screen_shot.png)
+
 This project showcases how to implement: AJAX requests, event handling, DOM traversal and manipulation by using the native DOM API and vanilla JavaScript.
 
-AJAX request: creates an XMLHttpRequest object, send XHR request and handles callback when API returns requested data.
+## DEMO
+
+Download the original files `lib/dom_node_collection.js` and `lib/main.js` and use `webpack` to compile the files.
+
+## Core Functions
+
+AJAX request: creates an XMLHttpRequest object, send XHR request and handles callback.
 
 ```javascript
 $l.ajax = function(options) {
