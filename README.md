@@ -4,7 +4,7 @@
 
 [Live site](http://tsi.life/DOM-only/)
 
-![main screen](assets/screen_shot.png)
+![main screen](assets/img/screen_shot.png)
 
 This project showcases how to implement: AJAX requests, event handling, DOM traversal and manipulation by using the native DOM API and vanilla JavaScript.
 
