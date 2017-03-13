@@ -180,7 +180,7 @@ class DOMNodeCollection {
 
   off(event) {
     this.htmlElements.forEach(el => {
-      const eventName = `pom-${event}`;
+      const eventName = `jq-${event}`;
       if (el[eventName]) {
         el[eventName].forEach(handler => {
           el.removeEventListener(event, handler);
