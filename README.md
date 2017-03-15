@@ -1,8 +1,6 @@
 # DOM-only
 
-## Overview
-
-[Demo site](http://tsi.life/DOM-only/)
+[LIVE DEMO](http://tsi.life/DOM-only/)
 
 ![main screen](assets/img/DOM-only.gif)
 
@@ -10,7 +8,7 @@ This project showcases how to implement: AJAX requests, event handling, DOM trav
 
 ## DEMO
 
-Feel free to download the original files, all the source code for the library is in both `lib/dom_node_collection.js` and `lib/main.js`.  Use webpack to compile the files, then add the follow script tag ```<script type="text/javascript" src="./jquery_lite.js" charset="utf-8"></script>``` and you are ready to go.
+Feel free to download the original files, all the source code for the library is in both `lib/dom_node_collection.js` and `lib/main.js`.  Use webpack to compile the files, then add the follow script tag ```<script type="text/javascript" src="./lib/dom_only.js" charset="utf-8"></script>``` and you are ready to go.
 
 ## Core Functions
 
