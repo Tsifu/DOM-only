@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="./jquery_lite.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./lib/dom_only.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="stylesheet.css">
@@ -80,56 +80,12 @@
 
     <header>
         <div class="header">
-          <a href="http://tsi.life"><span>Portfolio Page</span></a>
+          <a href="https://tsi.life"><span>Portfolio Page</span></a>
           <a href="https://www.linkedin.com/in/tsi-yang-lung-43528313/"><span>LinkedIn</span></a>
           <a href="https://github.com/Tsifu"><span>Github</span></a>
         </div>
     </header>
 
-    <script type="text/javascript">
-      $l(".add-li").on("click", () => {
-        color = $l.getRandomColor();
-        $l(".test-ul").append(`<li style="background-color: ${color}">${color}</li>`);
-        $l(".sc-detail").attr("src", "./assets/detail/append.png");
-      })
-
-      $l(".change-li").on("click", () => {
-        $l("li").html("Boom!")
-        $l(".sc-detail").attr("src", "./assets/detail/html.png");
-      })
-
-      $l(".clear-li").on("click", () => {
-        $l("li").empty();
-        $l(".sc-detail").attr("src", "./assets/detail/empty.png");
-      })
-
-      $l(".change-attr").on("click", () => {
-        if ($l(".img-div").find(".moon").htmlElements.length === 1) {
-          $l(".moon").attr("src", "./assets/img/half_moon.jpeg")
-          $l(".img-div").children().removeClass('moon')
-        } else {
-          $l(".img-div").children().attr("src", "./assets/img/full_moon.jpg")
-          $l(".img-div").children().addClass('moon')
-        }
-        $l(".sc-detail").attr("src", "./assets/detail/change_button.png");
-      })
-
-      $l(".remove-li").on("click", () => {
-        $l("ul").children().remove()
-        $l(".sc-detail").attr("src", "./assets/detail/remove.png");
-      })
-
-      $l(".xhr-request").on("click", () => {
-        $l.ajax({
-          url: "http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&limit=1&ids=UkhHIZ37IDRGo",
-          success(data){
-            const imageUrl = data['data'][0]['images']['fixed_width']['url']
-            $l('.giphy').html(`<img src=${imageUrl}>`)
-          }
-        })
-
-        $l(".sc-detail").attr("src", "./assets/detail/change_button.png");
-      })
-    </script>
+    <script src="./lib/demo_script.js"></script>
   </body>
 </html>
